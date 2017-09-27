@@ -1,5 +1,5 @@
 import unittest
-from cf_deployment_tracker import track
+from metrics_tracker_client import track
 
 
 def suite():
