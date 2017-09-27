@@ -19,7 +19,7 @@ class DeployEventTestCase(unittest.TestCase):
         """Send a sample test event to the dev deployment tracker"""
 
         dev_deployment_tracker_url = 'https://metrics-tracker.mybluemix.net/api/v1/track'
-        self.assertTrue(track(dev_deployment_tracker_url) is None)
+        self.assertTrue(track(dev_deployment_tracker_url) is not None)
 
 if __name__ == '__main__':
     unittest.main()
