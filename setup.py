@@ -19,13 +19,13 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='cf-deployment-tracker',
-    version='1.0.4',
-    description='Python client for the Cloud Foundry deployment tracker',
+    name='metrics-tracker-client',
+    version='1.0.9',
+    description='Python client for the deployment tracker',
     long_description=long_description,
-    url='https://github.com/IBM-Bluemix/cf-deployment-tracker-client-python',
-    author='Jake Peyser',
-    author_email='jepeyser@us.ibm.com',
+    url='https://github.com/IBM/metrics-collector-client-python',
+    author='Jake Peyser, Tommy Li',
+    author_email='jepeyser@us.ibm.com, Tommy.chaoping.li@ibm.com',
     license='Apache-2.0',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
@@ -39,5 +39,5 @@ setup(
     ],
     keywords='demos samples metrics',
     packages=find_packages(exclude=['tests']),
-    install_requires=['requests>=2'],
+    install_requires=['requests>=2','pyyaml'],
 )

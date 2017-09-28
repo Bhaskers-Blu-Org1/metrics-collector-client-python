@@ -1,8 +1,10 @@
 import time
 import json
+import getpass
 from re import search
 from requests import post
 from os import environ as env
+from . import metrics
 
 
 def track(tracker_url=None):
@@ -28,21 +30,32 @@ def track(tracker_url=None):
     except IOError as e:
         print ("No setup.py file exists for the current app")
 
+    event = dict()
+    event['date_sent'] = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())
+    event['runtime'] = 'python'
+    event['provider'] = 'others'
+    try:
+        event['space_id'] = getpass.getuser()
+    except:
+        pass
+    journey_metric = metrics.getJson()
+
     if env.get('VCAP_APPLICATION') is not None:
         vcap_app = json.loads(env['VCAP_APPLICATION'])
-        event = dict()
-        event['date_sent'] = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())
         if version is not None:
             event['code_version'] = version
         if repo_url is not None:
             event['repository_url'] = repo_url
-        event['runtime'] = 'python'
         event['application_name'] = str(vcap_app['name'])
         event['application_id'] = str(vcap_app['application_id'])
         event['instance_index'] = vcap_app['instance_index']
         event['space_id'] = str(vcap_app['space_id'])
         event['application_version'] = str(vcap_app['application_version'])
         event['application_uris'] = [str(uri) for uri in vcap_app['application_uris']]
+        try:
+            event['provider'] = str(vcap_app['cf_api'])
+        except:
+            pass
 
         # Check for VCAP_SERVICES env var with at least one service
         # Refer to http://docs.cloudfoundry.org/devguide/deploy-apps/environment-variable.html#VCAP-SERVICES
@@ -65,11 +78,23 @@ def track(tracker_url=None):
                 if len(event['bound_vcap_services'][service]['plans']) == 0:
                     del event['bound_vcap_services'][service]['plans']
 
-        # Create and format request to Deployment Tracker
-        url = 'https://deployment-tracker.mybluemix.net/api/v1/track' if tracker_url is None else tracker_url
-        headers = {'content-type': "application/json"}
-        try:
-            response = post(url, data=json.dumps(event), headers=headers)
-            print ('Uploaded stats: %s' % response.text)
-        except Exception as e:
-            print ('Deployment Tracker upload error: %s' % str(e))
+    if journey_metric is not None:
+        event = metrics.massage(journey_metric, event)
+
+    # Create and format request to Deployment Tracker
+    url = 'https://metrics-tracker.mybluemix.net/api/v1/track' if tracker_url is None else tracker_url
+    headers = {'content-type': "application/json"}
+    try:
+        response = post(url, data=json.dumps(event), headers=headers)
+        print ('Uploaded stats: %s' % response.text)
+    except Exception as e:
+        print ('Deployment Tracker upload error: %s' % str(e))
+
+# Track metrics in Data Science Experience
+def DSX(metric=None):
+    # Skip if there is no metric
+    if not metric:
+        print ('Missing Github organization/repository name')
+    else:
+        metrics.DSXtrack(metric)
+
