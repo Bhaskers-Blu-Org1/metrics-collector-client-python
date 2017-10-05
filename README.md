@@ -1,5 +1,7 @@
 # Overview
 
+Metrics Collector Service collects statistics for dpelyoment of a github sample code on Cloud Foundry, Kubernetes, Data Science Experience, OpenWhisk etc.
+
 This is the source code for metrics_tracker_client, a pip package that can track and report details of a demo/tutorial.
 
 ## How To Use It On Applications
