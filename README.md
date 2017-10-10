@@ -1,6 +1,6 @@
 # Overview
 
-Metrics Collector Service collects statistics for dpelyoment of a github sample code on Cloud Foundry, Kubernetes, Data Science Experience, OpenWhisk etc.
+Metrics Collector Service collects statistics for deployment of a github sample code on Cloud Foundry, Kubernetes, Data Science Experience, OpenWhisk etc.
 
 This is the source code for metrics_tracker_client, a pip package that can track and report details of a demo/tutorial.
 
@@ -64,7 +64,9 @@ Required field:
 
 ## Example app
 
-To see how to include this into your app please visit [Bluemix Hello World](https://github.com/IBM-Bluemix/python-hello-world-flask). You will want to pay attention to [setup.py](https://github.com/IBM-Bluemix/python-hello-world-flask/blob/master/setup.py) and [hello.py](https://github.com/IBM-Bluemix/python-hello-world-flask/blob/master/hello.py).
+To see how to include this into your app please visit [watson-online-store](https://github.com/IBM/watson-online-store). You will want to pay attention to [repository.yaml](https://github.com/IBM/watson-online-store/blob/master/repository.yaml) and [run.py](https://github.com/IBM/watson-online-store/blob/master/run.py#L184).
+
+To see how to include this into your Jupyter Notebook please visit [Integrate-Investment-Portfolio](https://github.com/IBM/Integrate-Investment-Portfolio). You will want to pay attention to [repository.yaml](https://github.com/IBM/Integrate-Investment-Portfolio/blob/master/repository.yaml) and [SetupPortfolio.ipynb](https://github.com/IBM/Integrate-Investment-Portfolio/blob/master/notebooks/SetupPortfolio.ipynb).
 
 ## Privacy Notice
 
