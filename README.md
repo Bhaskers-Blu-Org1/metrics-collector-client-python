@@ -51,6 +51,7 @@ services:
   - Discovery
 event_id: web
 event_organizer: dev-journeys
+language: python
 ```
 
 Required field:
@@ -60,6 +61,7 @@ Required field:
 3. services: Put down all the bluemix services that are used in your journey in a list.
 4. event_id: Put down where you will distribute your journey. Default is web.
 5. event_organizer: Put down your event organizer if you have one.
+6. language: If your journey is not in **python**, please put down the journey's main language in lower case.
 
 
 ## Example app

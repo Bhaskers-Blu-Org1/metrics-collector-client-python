@@ -20,7 +20,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name='metrics-tracker-client',
-    version='1.0.9',
+    version='1.1.1',
     description='Python client for the deployment tracker',
     long_description=long_description,
     url='https://github.com/IBM/metrics-collector-client-python',

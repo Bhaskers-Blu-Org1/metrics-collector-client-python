@@ -32,13 +32,17 @@ def track(tracker_url=None):
 
     event = dict()
     event['date_sent'] = time.strftime("%Y-%m-%dT%H:%M:%S.000Z", time.gmtime())
-    event['runtime'] = 'python'
     event['provider'] = 'others'
     try:
         event['space_id'] = getpass.getuser()
     except:
         pass
     journey_metric = metrics.getJson()
+
+    if (journey_metric is not None) and journey_metric.get("language"):
+        event['runtime'] = journey_metric['language']
+    else:
+        event['runtime'] = 'python'
 
     if env.get('VCAP_APPLICATION') is not None:
         vcap_app = json.loads(env['VCAP_APPLICATION'])
@@ -52,6 +56,7 @@ def track(tracker_url=None):
         event['space_id'] = str(vcap_app['space_id'])
         event['application_version'] = str(vcap_app['application_version'])
         event['application_uris'] = [str(uri) for uri in vcap_app['application_uris']]
+        event['bound_services'] = []
         try:
             event['provider'] = str(vcap_app['cf_api'])
         except:
@@ -74,6 +79,8 @@ def track(tracker_url=None):
                 for instance in vcap_services[service]:
                     if 'plan' in instance.keys():
                         event['bound_vcap_services'][service]['plans'].append(str(instance['plan']))
+                    if 'name' in instance.keys():
+                        event['bound_services'].append(str(instance['name']))
 
                 if len(event['bound_vcap_services'][service]['plans']) == 0:
                     del event['bound_vcap_services'][service]['plans']
@@ -97,4 +104,3 @@ def DSX(metric=None):
         print ('Missing Github organization/repository name')
     else:
         metrics.DSXtrack(metric)
-
