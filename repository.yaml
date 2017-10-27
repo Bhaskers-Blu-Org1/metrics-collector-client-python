@@ -4,7 +4,7 @@
 
 # runtimes:
 #       - Kubernetes Cluster
-#       - OpenWhisk
+#       - Functions
 #       - Cloud Foundry
 #       - Mainframe
 #       - Swift on the Server
