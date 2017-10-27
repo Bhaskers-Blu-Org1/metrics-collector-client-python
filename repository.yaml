@@ -12,11 +12,8 @@
 #       - Data Science Experience
 
 # services:
-#       - IoT Platform
 #       - Investment Portfolio
-#       - NodeRed (Serverless)
-#       - Speech to Text
-#       - Watson IoT Platform
+#       - NodeRed
 #       - Object Storage
 #       - Apache Spark
 #       - Cloudant NoSQL DB
