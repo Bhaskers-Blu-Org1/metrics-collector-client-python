@@ -3,39 +3,54 @@
 # event_organizer: dev-journeys
 
 # runtimes:
-#       - Kubernetes Cluster
-#       - OpenWhisk
 #       - Cloud Foundry
-#       - Mainframe
-#       - Swift on the Server
-#       - Hyperledger Composer
 #       - Data Science Experience
+#       - Hyperledger Composer
+#       - Kubernetes Cluster
+#       - Mainframe
+#       - OpenWhisk
+#       - Swift on the Server
 
 # services:
-#       - Investment Portfolio
-#       - NodeRed
-#       - Object Storage
+#       - Analytics Engine
 #       - Apache Spark
-#       - Cloudant NoSQL DB
-#       - Tone Analyzer
-#       - Natural Language Understanding
-#       - Visual Recognition
-#       - Conversation
-#       - Discovery
-#       - Text-to-Speech
-#       - Speech-to-Text
 #       - API Connect
-#       - Secure Gateway
-#       - Watson Analytics
-#       - Insights for Weather
-#       - Internet of Things Platform
+#       - App Connect
+#       - App ID
+#       - Blockchain
+#       - Cloudant NoSQL DB
+#       - Compose for etcd
+#       - Compose for ElasticSearch
+#       - Compose for JanusGraph
+#       - Compose for MongoDB
 #       - Compose for MySQL
 #       - Compose for PostgreSQL
-#       - App ID
-#       - Push Notifications
-#       - Streaming Analytics for Bluemix
+#       - Compose for RabbitMQ
+#       - Compose for Redis
+#       - Conversation
+#       - Db2 on Cloud
+#       - Db2 Warehouse on Cloud
+#       - Discovery
+#       - Insights for Weather
+#       - Internet of Things Platform
 #       - Investment Portfolio
+#       - Language Translator
+#       - Natural Language Classifier
+#       - Natural Language Understanding
+#       - NodeRed
+#       - Object Storage
+#       - Personality Insights
 #       - Predictive Market Scenarios
+#       - Push Notifications
+#       - Secure Gateway
 #       - Simulated Instrument Analytics
+#       - Speech-to-Text
+#       - Streaming Analytics for Bluemix
+#       - Text-to-Speech
+#       - Tone Analyzer
+#       - Visual Recognition
+#       - Watson Analytics
+#       - Watson IoT Platform
+#       - WebSphere Application Server
 
 # language: python
