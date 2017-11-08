@@ -57,8 +57,9 @@ language: python
 Required field:
 
 1. id: Put your journey name/Github URL of your journey.
+	- Note: Please put down the Github URL if your journey/pattern is not from IBM organization.
 2. runtimes: Put down all your platform runtime environments in a list.
-3. services: Put down all the bluemix services that are used in your journey in a list.
+3. services: Put down all the IBM Cloud services that are used in your journey in a list.
 4. event_id: Put down where you will distribute your journey. Default is web.
 5. event_organizer: Put down your event organizer if you have one.
 6. language: If your journey is not in **python**, please put down the journey's main language in lower case.
@@ -72,7 +73,7 @@ To see how to include this into your Jupyter Notebook please visit [Integrate-In
 
 ## Privacy Notice
 
-Sample web applications that include this package may be configured to track deployments to [IBM Bluemix](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
+Sample web applications that include this package may be configured to track deployments to [IBM Cloud](https://www.bluemix.net/) and other platforms. The following information is sent to a [Deployment Tracker](https://github.com/IBM/metrics-collector-service) service on each deployment:
 
 * Python package version
 * Python repository URL
@@ -87,7 +88,7 @@ Sample web applications that include this package may be configured to track dep
 * Number of instances for each bound service and associated plan information
 * Metadata in the repository.yaml file
 
-This data is collected from the `setup.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Bluemix and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Bluemix to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
+This data is collected from the `setup.py` and `repository.yaml` file in the sample application and the `VCAP_APPLICATION` and `VCAP_SERVICES` environment variables in IBM Cloud and other Cloud Foundry platforms. This data is used by IBM to track metrics around deployments of sample applications to IBM Cloud to measure the usefulness of our examples, so that we can continuously improve the content we offer to you. Only deployments of sample applications that include code to ping the Deployment Tracker service will be tracked.
 
 ## Disabling Deployment Tracking
 
