@@ -44,7 +44,7 @@ This is the source code for metrics_tracker_client, a pip package that can track
 The repository.yaml need to be written in Yaml format. Also, please put all your keys in lower case.
 
 ```yaml
-id: watson-discovery-news
+id: https://github.com/IBM/watson-discovery-news
 runtimes: 
   - Cloud Foundry
 services: 
@@ -56,14 +56,17 @@ language: python
 
 Required field:
 
-1. id: Put your journey name/Github URL of your journey.
-	- Note: Please put down the Github URL if your journey/pattern is not from IBM organization.
+1. id: Put your Github URL of your pattern/project.
+   - Note: Please put down the Github URL if your pattern is not from **IBM** organization in Github.
 2. runtimes: Put down all your platform runtime environments in a list.
 3. services: Put down all the IBM Cloud services that are used in your journey in a list.
-4. event_id: Put down where you will distribute your journey. Default is web.
-5. event_organizer: Put down your event organizer if you have one.
-6. language: If your journey is not in **python**, please put down the journey's main language in lower case.
+4. event_id: Put down where you will distribute your application. Default is **web**. 
+5. event_organizer: Put down your event organizer if you have one. Default is **dev-journeys**
+6. language: If your journey is not in **python**, please put down the application's main language in lower case.
 
+## List of runtimes, services, and languages
+
+Please go to the [service list page](https://github.com/IBM/metrics-collector-service/blob/master/docs/service_list.md) to get the list of official names for runtimes, services, and languages.
 
 ## Example app
 
